@@ -23,3 +23,12 @@ If you have a brand new helpful Max thingie and would like to put it in this dra
 3. Commit your changes to your branch
 4. Open a pull request
 5. Drink that carrot juice you’ve been saving for a special moment. :rabbit: :tada:
+
+
+### Wait, aren’t there any rules? :cop:
+
+No, not really? Be kind to one another?
+
+Oh! And if you’re adding a new abstraction, please also add a helpfile with a `.maxhelp` extension to the `help` directory and reference documentation with a `.maxref.xml` extension to the `docs` directory. That way future humans (and others?!) will be able to figure out what your thingamajig does.
+
+If you don’t know how to create those, DO NOT FEAR! Open a pull request regardless and we can work on it together. :two_hearts:
