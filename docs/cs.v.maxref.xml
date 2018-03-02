@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="cs.v" module="max" category="cs.utils, Data">
+
+	<digest>
+		A handy hybrid of value and send/receive
+	</digest>
+
+	<description>
+		Shares data with other <o>cs.v</o> objects of the same name. If you send a message (number, list, or anything else) to one <o>cs.v</o> object, it is immediately output by all <o>cs.v</o> objects with the same first argument. You can get the contents out of a particular <o>cs.v</o> object by sending it a <m>bang</m>. <o>cs.v</o> is an abstraction wrapped around the <o>value</o> object, so will also work with <o>value</o> objects whose name matches.
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Chris Swithinbank</metadata>
+		<metadata name="tag">cs.utils</metadata>
+		<metadata name="tag">Data</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="anything">
+			<digest>any message stores the value and causes output from all instances with the same name</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="anything">
+			<digest>messages addressed to any instance with the same name</digest>
+		</outlet>
+	</outletlist>
+
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="name" optional="0" type="symbol">
+			<digest>Shared context name</digest>
+			<description>
+				Sets the name of the <o>cs.v</o> object. Other <o>cs.v</o> and <o>value</o> objects with the same name will share its contents.
+			</description>
+		</objarg>
+		<objarg name="initial value" optional="1" type="anything">
+			<digest>Initial value</digest>
+			<description>
+				Additional arguments after the naming symbol initialize the contents of <o>cs.v</o>. If no additional arguments are present, <o>cs.v</o> contains nothing.
+			</description>
+		</objarg>
+	</objarglist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="bang">
+			<arglist />
+			<digest>
+				Output the stored value
+			</digest>
+			<description>
+				Sends out the stored message.
+			</description>
+		</method>
+		<method name="int">
+			<arglist>
+				<arg name="input" optional="0" type="int" />
+			</arglist>
+			<digest>
+				Store and share data
+			</digest>
+			<description>
+				Performs the same function as <m>anything</m>.
+			</description>
+		</method>
+		<method name="float">
+			<arglist>
+				<arg name="input" optional="0" type="float" />
+			</arglist>
+			<digest>
+				Store and share data
+			</digest>
+			<description>
+				Performs the same function as <m>anything</m>.
+			</description>
+		</method>
+		<method name="list">
+			<arglist>
+				<arg name="input" optional="0" type="list" />
+			</arglist>
+			<digest>
+				Store and share data
+			</digest>
+			<description>
+				Performs the same function as <m>anything</m>.
+			</description>
+		</method>
+		<method name="anything">
+			<arglist>
+				<arg name="input" optional="0" type="list" />
+			</arglist>
+			<digest>
+				Store and share data
+			</digest>
+			<description>
+				The message is stored, to be shared by all other <o>cs.v</o> objects with the same name, even if they are in another patch. A message received in any other <o>cs.v</o> object that has the same name will change the stored value and be immediately sent out of the outlet.
+			</description>
+		</method>
+		<method name="symbol">
+			<arglist>
+				<arg name="input" optional="0" type="symbol" />
+			</arglist>
+			<digest>
+				Store and share data
+			</digest>
+			<description>
+				Performs the same function as <m>anything</m>.
+			</description>
+		</method>
+	</methodlist>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="value"/>
+		<seealso name="float" />
+		<seealso name="int" />
+		<seealso name="pv" />
+		<seealso name="pvar" />
+		<seealso name="send"/>
+		<seealso name="receive"/>
+		<seealso name="basicchapter16" module="max" type="tutorial" />
+	</seealsolist>
+
+</c74object>
