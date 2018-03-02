@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="cs.xfadelooper~" module="msp" category="cs.utils, MSP Sampling">
+
+	<digest>
+		Loop audio with variable length crossfading
+	</digest>
+
+	<description>
+		<o>cs.xfadelooper~</o> allows you to playback audio (from an internal <o>buffer~</o> object) in a loop which overlaps and crossfades the start and end, creating a continuous sounds. Can be used to convert a sampled sustained sound into a sound of indeterminate length or to create seamless loops.
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Chris Swithinbank</metadata>
+		<metadata name="tag">cs.utils</metadata>
+		<metadata name="tag">MSP</metadata>
+		<metadata name="tag">MSP Sampling</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="anything">
+			<digest>int/float sets the loop’s playback rate, with 0 stopping playback; other messages are forwarded to an internal <o>buffer~</o></digest>
+		</inlet>
+		<inlet id="1" type="anything">
+			<digest>set the crossfade time</digest>
+			<description>
+				int/float sets the crossfade time as a proportion of the loop duration (0.–0.5). The message <m>ms</m> followed by a number, sets the crossfade time in milliseconds (of the original loop duration).
+			</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>left audio channel output</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>right audio channel output</digest>
+		</outlet>
+	</outletlist>
+
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="crossfade proportion" optional="1" type="number">
+			<digest>Crossfade proportion</digest>
+			<description>
+				Sets the proportion of the loop duration that is used for the crossfade (0.–0.5).
+			</description>
+		</objarg>
+		<objarg name="default rate" optional="1" type="number">
+			<digest>Default playback rate</digest>
+			<description>
+				By default, <o>cs.xfadelooper~</o> loads at a playback rate of 0, i.e. stopped, but setting another argument will make the object playback as soon as DSP is turned on. 1 = normal speed; negative numbers = reverse playback.
+			</description>
+		</objarg>
+	</objarglist>
+
+	<!--ATTRIBUTES-->
+	<attributelist>
+		<attribute name="filename" get="1" set="1" type="symbol" size="1">
+			<digest>
+				name of a file to load by default
+			</digest>
+			<description>
+				This file will be loaded into the internal <o>buffer~</o> when the patch is opened.
+			</description>
+		</attribute>
+		<attribute name="ms" get="1" set="1" type="int" size="1">
+			<digest>
+				length of crossfade in ms
+			</digest>
+			<description>
+				The length of the crossfade time in milliseconds (of the original loop duration).
+			</description>
+		</attribute>
+	</attributelist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="int">
+			<arglist>
+				<arg name="input" optional="0" type="int" />
+			</arglist>
+			<digest>Set the playback rate.</digest>
+			<description>
+				Sets the playback rate of the loop. 1 = normal speed; negative numbers = reverse playback.
+			</description>
+		</method>
+		<method name="float">
+			<arglist>
+				<arg name="input" optional="0" type="float" />
+			</arglist>
+			<digest>Set the playback rate.</digest>
+			<description>
+				Sets the playback rate of the loop. 1 = normal speed; negative numbers = reverse playback.
+			</description>
+		</method>
+		<method name="anything">
+			<arglist />
+			<digest>See <o>buffer~</o> documentation</digest>
+			<description>
+				See <o>buffer~</o> documentation
+			</description>
+		</method>
+	</methodlist>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="buffer~"/>
+		<seealso name="groove~" />
+		<seealso name="sfplay~" />
+		<seealso name="wave~" />
+	</seealsolist>
+
+</c74object>
