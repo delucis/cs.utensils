@@ -16,6 +16,10 @@ This repository is a package for Cycling 74’s Max, including various abstracti
 - `cs.v` — a “reactive” value
 - `cs.xfadelooper~` — a looper that crossfades
 
+## Contributing
+
+If you are interested in contributing to this package, that is marvellous! Please check out [the contribution guide](/CONTRIBUTING.md) for more details, and read [the code of conduct](CODE_OF_CONDUCT.md) to learn about being gentle and kind to one another. Gentleness and kindness are good things.
+
 ## License
 
 This software is free to use, modify, and redistribute under the [GNU General Public License v3.0](/LICENSE).
