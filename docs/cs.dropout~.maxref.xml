@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="cs.dropout~" module="max" category="cs.utils, MSP">
+
+	<digest>
+		Add controlled audio dropouts to a signal
+	</digest>
+
+	<description>
+		<o>cs.dropout~</o> processes input signal by cutting out from time to time, similar to an audio “dropout,” where several samples are lost, leading to short bursts of silence breaking up your signal. Depending on the settings used, the effects can be glitchy, grainy, crackly, or a noisy destruction of the original sound.
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Chris Swithinbank</metadata>
+		<metadata name="tag">cs.utils</metadata>
+		<metadata name="tag">MSP</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>audio signal to process</digest>
+		</inlet>
+		<inlet id="1" type="float">
+			<digest>set the LFO frequency driving the module in Hertz</digest>
+		</inlet>
+		<inlet id="2" type="float">
+			<digest>set the probability of audio dropouts (0–100%)</digest>
+		</inlet>
+		<inlet id="3" type="int">
+			<digest>set the dropout “smoothness” in samples</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>processed audio signal</digest>
+		</outlet>
+	</outletlist>
+
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="lfo-frequency" optional="1" type="number">
+			<digest>LFO Frequency (Hz)</digest>
+			<description>
+				Sets the frequency of the random number generator driving the <o>cs.dropout~</o> object. Higher frequencies will produce more frequent opportunities for dropouts, but also produce shorter dropouts, while lower frequencies will result in longer and less frequent dropouts.
+			</description>
+		</objarg>
+		<objarg name="dropout-probability" optional="1" type="number">
+			<digest>Dropout Probability (0–100%)</digest>
+			<description>
+				How likely a dropout is to occur. This interacts with the LFO Frequency control. Higher frequencies produce more frequent chances for dropouts, which can be controlled using the probability slider.
+			</description>
+		</objarg>
+		<objarg name="smoothness" optional="1" type="number">
+			<digest>Smoothness (samples)</digest>
+			<description>
+				How smooth the edges of dropouts are. This controls the number of samples over which the signal cuts in/out. A smoothness of 0 will produce sharp cuts, while higher settings will produce softer, more rounded edges.
+			</description>
+		</objarg>
+	</objarglist>
+
+	<!--MESSAGES-->
+	<methodlist>
+	</methodlist>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="stutter~"/>
+		<seealso name="*~"/>
+	</seealsolist>
+
+</c74object>

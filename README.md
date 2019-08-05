@@ -13,6 +13,7 @@ This repository is a package for Cycling 74’s Max, including various abstracti
 
 ## Contents
 
+- `cs.dropout~` — add audio dropouts to a signal
 - `cs.v` — a “reactive” value
 - `cs.xfadelooper~` — a looper that crossfades
 
