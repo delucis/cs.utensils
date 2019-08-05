@@ -44,13 +44,13 @@
 
 	<!--ARGUMENTS-->
 	<objarglist>
-		<objarg name="crossfade proportion" optional="1" type="number">
+		<objarg name="crossfade-proportion" optional="1" type="number">
 			<digest>Crossfade proportion</digest>
 			<description>
 				Sets the proportion of the loop duration that is used for the crossfade (0.–0.5).
 			</description>
 		</objarg>
-		<objarg name="default rate" optional="1" type="number">
+		<objarg name="rate" optional="1" type="number">
 			<digest>Default playback rate</digest>
 			<description>
 				By default, <o>cs.xfadelooper~</o> loads at a playback rate of 0, i.e. stopped, but setting another argument will make the object playback as soon as DSP is turned on. 1 = normal speed; negative numbers = reverse playback.
