@@ -14,6 +14,7 @@ This repository is a package for Cycling 74’s Max, including various abstracti
 ## Contents
 
 - `cs.dropout~` — add audio dropouts to a signal
+- `cs.selector~` — 6-input `selector~` with a `bpatcher` GUI
 - `cs.v` — a “reactive” value
 - `cs.xfadelooper~` — a looper that crossfades
 
