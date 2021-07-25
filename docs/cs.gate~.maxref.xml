@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="cs.gate~" module="msp" category="cs.utils, MSP, MSP Routing">
+
+	<digest>
+		Route a signal to one of several outlets with a readymade GUI.
+	</digest>
+
+	<description>
+		Use <o>cs.gate~</o> to route an input signal at the second inlet to one of several outlets, or to no outlet at all as you would with <o>gate~</o>. When loaded in a <o>bpatcher</o>, <o>cs.gate~</o> provides a readymade GUI.
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Chris Swithinbank</metadata>
+		<metadata name="tag">cs.utils</metadata>
+		<metadata name="tag">MSP</metadata>
+		<metadata name="tag">MSP Routing</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="int">
+			<digest>(int) Set the opened outlet (0 = none; 1–6 = output 1–6).</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Audio input </digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<inlet id="0" type="signal">
+			<digest>(signal) Audio output 1</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Audio output 2</digest>
+		</inlet>
+		<inlet id="2" type="signal">
+			<digest>(signal) Audio output 3</digest>
+		</inlet>
+		<inlet id="3" type="signal">
+			<digest>(signal) Audio output 4</digest>
+		</inlet>
+		<inlet id="4" type="signal">
+			<digest>(signal) Audio output 5</digest>
+		</inlet>
+		<inlet id="5" type="signal">
+			<digest>(signal) Audio output 6</digest>
+		</inlet>
+	</outletlist>
+
+	<!--ARGUMENTS-->
+	<objarglist>
+	</objarglist>
+
+	<!--MESSAGES-->
+	<methodlist>
+    <method name="int">
+			<arglist>
+				<arg name="outlet-selected" optional="0" type="int" />
+			</arglist>
+			<digest>
+				Select outlet to route input to
+			</digest>
+      <description>
+        Select which outlet to route the input to. If the value is 0, a zero signal is sent out. 1–6 routes the input to the corresponding outlet.
+      </description>
+		</method>
+	</methodlist>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="cs.selector~"/>
+		<seealso name="gate~"/>
+		<seealso name="selector~"/>
+	</seealsolist>
+
+</c74object>

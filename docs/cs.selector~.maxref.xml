@@ -72,6 +72,7 @@
 
 	<!--SEEALSO-->
 	<seealsolist>
+		<seealso name="cs.gate~"/>
 		<seealso name="selector~"/>
 		<seealso name="gate~"/>
 	</seealsolist>
